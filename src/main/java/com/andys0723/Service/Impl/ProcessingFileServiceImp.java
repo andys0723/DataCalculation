@@ -1,5 +1,9 @@
 package com.andys0723.Service.Impl;
-
+/*
+      This service is responsible for providing the guide that reading data from file, calculate the data, and save data into file.
+*/
+import java.util.Arrays;
+import java.util.List;
 import com.andys0723.Model.Stock;
 import com.andys0723.Service.CalculateDataService;
 import com.andys0723.Service.ProcessingService;
@@ -8,10 +12,6 @@ import com.andys0723.Service.WriteFileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 @Service
 public class ProcessingFileServiceImp implements ProcessingService{
@@ -41,9 +41,6 @@ public class ProcessingFileServiceImp implements ProcessingService{
             writeFileService.setFileName(dir+name);
             writeFileService.writeData();
         }
-
-
-
 
     }
 

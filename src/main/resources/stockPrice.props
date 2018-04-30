@@ -2,3 +2,5 @@ file.dir=src/data/
 file.name=CodingDemoData,CodingDemoData2
 file.tileDelimiter=\\|
 file.bodyDelimiter=\\,
+
+file.interpretion.zero=none,None

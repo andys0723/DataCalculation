@@ -1,19 +1,25 @@
 package com.andys0723.Service.Impl;
-
-import com.andys0723.Model.Stock;
-import com.andys0723.Service.ReadFileService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
+/*
+      This service is responsible for reading each row of data from file
+*/
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import com.andys0723.Model.Stock;
+import com.andys0723.Service.ReadFileService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
 
 @Service("ReadDataFromCVS")
 public class ReadDataFromCVS implements ReadFileService {
+    private final static Logger LOGGER = Logger.getLogger(ReadDataFromCVS.class.getName());
 
     @Value("${file.tileDelimiter}")
     private String tileDelimiter;
@@ -24,7 +30,7 @@ public class ReadDataFromCVS implements ReadFileService {
     private List<Stock> stocks;
 
     @Autowired
-    private List<String> exceptionList;
+    private List<String> ZeroInterpretation;
 
     private String fileName = null;
 
@@ -54,11 +60,10 @@ public class ReadDataFromCVS implements ReadFileService {
                 stock.setId(titles[0]);
 
                 String[] bodys = contents[1].split(bodyDelimiter);
-//                System.out.println(Arrays.toString(bodys));
                 for(int i = 0; i < bodys.length; i++){
 
                     double val = 0.0;
-                    if(!exceptionList.contains(bodys[i])){
+                    if(!ZeroInterpretation.contains(bodys[i])){
                         val = Double.valueOf(bodys[i]);
 
                     }
@@ -69,11 +74,12 @@ public class ReadDataFromCVS implements ReadFileService {
 
                 stocks.add(stock);
             }
-        }catch(NumberFormatException NumEx){
-            System.out.println("NumberFormateException");
+        }catch(IOException ex){
+            LOGGER.log(Level.WARNING, ex.toString(), ex);
+        }catch(NumberFormatException ex){
+            LOGGER.log(Level.WARNING, ex.toString(), ex);
         }finally {
             try {
-
                 if (br != null)
                     br.close();
 

@@ -2,6 +2,7 @@ package com.andys0723.Config;
 
 
 import com.andys0723.Model.Stock;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
@@ -26,10 +27,14 @@ public class AppConfig {
 
 
     @Bean
-    public List<String> exceptionList(){
-        List<String> exceptionList = new ArrayList<>();
-        exceptionList.add("None");
-        return exceptionList;
+    public List<String> ZeroInterpretation(@Value("${file.interpretion.zero}") final String specialInter){
+        List<String> ZeroInterpretation = new ArrayList<>();
+        String[] strings = specialInter.split(",");
+        for(String string: strings){
+            ZeroInterpretation.add(string);
+        }
+        System.out.println(ZeroInterpretation);
+        return ZeroInterpretation;
     }
 
 }
