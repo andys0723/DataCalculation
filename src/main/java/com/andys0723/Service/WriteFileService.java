@@ -1,7 +1,9 @@
 package com.andys0723.Service;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
+/**
+ * Name: Andy Tsai
+ * Date: 2018-4-29
+ * Interface define the basic method
+ **/
 
 public interface WriteFileService {
 

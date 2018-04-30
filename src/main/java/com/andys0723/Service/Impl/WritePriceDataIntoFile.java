@@ -1,7 +1,9 @@
 package com.andys0723.Service.Impl;
-/*
-      This service is responsible for writing min, max and average stock data into file.
- */
+/**
+ * Name: Andy Tsai
+ * Date: 2018-4-29
+ *This service is responsible for writing min, max and average stock data into file.
+ **/
 import java.io.*;
 import java.math.BigDecimal;
 import java.util.List;

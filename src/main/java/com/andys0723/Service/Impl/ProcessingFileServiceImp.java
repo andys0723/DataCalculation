@@ -1,7 +1,9 @@
 package com.andys0723.Service.Impl;
-/*
-      This service is responsible for providing the guide that reading data from file, calculate the data, and save data into file.
-*/
+/**
+ * Name: Andy Tsai
+ * Date: 2018-4-29
+ * *This service is responsible for providing the guide that reading data from file, calculate the data, and save data into file.
+**/
 import java.util.Arrays;
 import java.util.List;
 import com.andys0723.Model.Stock;

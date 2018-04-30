@@ -1,5 +1,9 @@
 package com.andys0723.Service.Impl;
-
+/**
+ * Name: Andy Tsai
+ * Date: 2018-4-29
+ * This class is responsible for calculating the min, max and average prices
+ */
 import com.andys0723.Model.Stock;
 import com.andys0723.Service.CalculateDataService;
 import org.springframework.beans.factory.annotation.Autowired;
