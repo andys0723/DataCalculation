@@ -1,6 +1,9 @@
 package com.andys0723.Model;
-
-import java.math.BigDecimal;
+/**
+ * Name: Andy Tsai
+ * Date: 2018-4-29
+ * This class hold the data of each stock
+ **/
 import java.util.ArrayList;
 import java.util.List;
 
