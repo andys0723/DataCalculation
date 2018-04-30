@@ -15,9 +15,6 @@ public class WritePriceDataIntoFile implements WriteFileService {
     @Autowired
     List<Stock> stocks;
 
-//    @Value("${file.dir}")
-//    private String dir;
-//    @Value("${file.name}")
     private String fileName;
 
     @Override

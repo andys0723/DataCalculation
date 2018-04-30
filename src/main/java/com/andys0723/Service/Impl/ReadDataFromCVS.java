@@ -28,11 +28,6 @@ public class ReadDataFromCVS implements ReadFileService {
 
     private String fileName = null;
 
-//    @Value("${file.dir}")
-//    private String dir;
-//    @Value("${file.name}")
-//    private String fileName;
-
     @Override
     public void readData() {
         System.out.println("ReadDataFromCVS");
@@ -76,9 +71,6 @@ public class ReadDataFromCVS implements ReadFileService {
             }
         }catch(NumberFormatException NumEx){
             System.out.println("NumberFormateException");
-        }catch (Exception ex) {
-
-
         }finally {
             try {
 
